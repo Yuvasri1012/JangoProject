@@ -1,0 +1,30 @@
+{% extends "index.html" %} {% block products %}
+
+<section class="max-w-7xl mx-auto px-4 py-10">
+  <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center"">Latest Dresses</h2>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+  >
+    <!-- Card 1 -->
+    {% for i in products %}
+
+    <div
+      class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition group"
+    >
+      <img src="{{i.dress_image}}" class="w-full h-64 object-cover group-hover:scale-110 transition duration-300"  />
+      <div class="p-4">
+        <h3 class="text-lg font-semibold">{{i.dress_name}}</h3>
+        <p class="text-pink-500 font-bold mt-1">₹{{i.dress_price}}</p>
+        <button
+          class="mt-3 w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Create Account</h2>
+
+      <form method="POST" action="signup_action">
+        {% csrf_token %}
+        <div class="row">
+          <div class="input-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              placeholder="First name"
+              required
+              name="firstname"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Last Name</label>
+            <input
+              type="text"
+              placeholder="Last name"
+              required
+              name="lastname"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Enter username"
+            required
+            name="username"
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter email" required name="email" />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter password"
+            required
+            name="password"
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Confirm password"
+            required
+            name="confirm_password"
+          />
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+      </form>
+
+      <div class="footer-text">
+        Already have an account? <a href="#">Login</a>
+      </div>
+    </div>
+  </body>
+</html>
